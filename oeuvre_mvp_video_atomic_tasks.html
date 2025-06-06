@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Video Sharing - MVP Atomic Task List</title>
+  <title>Video Features - MVP Atomic Task List</title>
   <style>
     body { font-family: 'Segoe UI', Arial, sans-serif; margin: 32px; background: #f7fafd; }
     h1 { color: #234; }
@@ -18,7 +18,7 @@
     .nav-container {
       position: fixed;
       top: 20px;
-      left: 20px;
+      right: 20px;
       z-index: 1000;
     }
     .menu-toggle {
@@ -39,7 +39,7 @@
     .nav-menu {
       position: absolute;
       top: 60px;
-      left: 0;
+      right: 0;
       background: white;
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -99,7 +99,7 @@
     </nav>
   </div>
   
-  <h1>Video Sharing – MVP Atomic Task List</h1>
+  <h1>Video Features – MVP Atomic Task List</h1>
   <table>
     <caption>Each task ≤8 hours, grouped and clearly described</caption>
     <tr>
@@ -113,130 +113,148 @@
     </tr>
     <!-- Planning & UX -->
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Planning & UX</td>
-      <td>Define video sharing requirements</td>
-      <td>Workshop/document video upload, limit, playback flows</td>
+      <td>Define video requirements</td>
+      <td>Workshop/document video recording, upload, playback features</td>
       <td>PM/UX</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Planning & UX</td>
-      <td>Wireframe video upload UI</td>
-      <td>Wireframe UI for video upload and preview in project post</td>
+      <td>Wireframe video UI</td>
+      <td>Wireframe video recording, upload, playback screens</td>
       <td>UX/UI</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
-    <!-- Frontend: Video Upload -->
+    <!-- Video Recording -->
     <tr>
-      <td>Video Sharing</td>
-      <td>Frontend - Video Upload</td>
-      <td>Build video picker/upload UI</td>
-      <td>React Native video picker and upload interface (1 min max)</td>
+      <td>Video Features</td>
+      <td>Video Recording</td>
+      <td>Build video record UI</td>
+      <td>Implement video recording screen in React Native</td>
       <td>React Native, Expo</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
-      <td>Frontend - Video Upload</td>
-      <td>Enforce video duration limit</td>
-      <td>Show warning if video > 1 min; reject if too long</td>
+      <td>Video Features</td>
+      <td>Video Recording</td>
+      <td>Add camera permissions</td>
+      <td>Handle camera/mic permissions for recording</td>
       <td>React Native, Expo</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
-      <td>Frontend - Video Upload</td>
-      <td>Show upload progress indicator</td>
-      <td>UI for showing video upload progress</td>
+      <td>Video Features</td>
+      <td>Video Recording</td>
+      <td>Add recording controls</td>
+      <td>Add start/stop/pause recording controls</td>
+      <td>React Native, Expo</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Video Upload -->
+    <tr>
+      <td>Video Features</td>
+      <td>Video Upload</td>
+      <td>Build video upload UI</td>
+      <td>UI for uploading recorded/existing videos</td>
+      <td>React Native, Expo</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Video Features</td>
+      <td>Video Upload</td>
+      <td>Add upload progress</td>
+      <td>Show upload progress bar and status</td>
       <td>React Native, Expo</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
-    <!-- Backend: Video Upload -->
+    <!-- Backend: Video Storage -->
     <tr>
-      <td>Video Sharing</td>
-      <td>Backend - Video Upload</td>
-      <td>Design video DB schema</td>
-      <td>MySQL field/schema for storing video URL/reference</td>
-      <td>MySQL</td>
-      <td>1</td>
+      <td>Video Features</td>
+      <td>Backend - Storage</td>
+      <td>Set up video storage</td>
+      <td>Configure Digital Ocean Spaces for video storage</td>
+      <td>Digital Ocean</td>
+      <td>2</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
-      <td>Backend - Video Upload</td>
-      <td>API for receiving video upload</td>
-      <td>Node/Express endpoint for video upload</td>
+      <td>Video Features</td>
+      <td>Backend - Storage</td>
+      <td>API for video upload</td>
+      <td>Express endpoint for video upload to storage</td>
       <td>Node.js, Express</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
+    <!-- Video Playback -->
     <tr>
-      <td>Video Sharing</td>
-      <td>Backend - Video Upload</td>
-      <td>Integrate with cloud storage</td>
-      <td>Store uploaded video in Digital Ocean Spaces/S3</td>
-      <td>Node.js, Digital Ocean</td>
-      <td>2</td>
-      <td>MVP</td>
-    </tr>
-    <!-- Frontend: Video Playback -->
-    <tr>
-      <td>Video Sharing</td>
-      <td>Frontend - Video Playback</td>
-      <td>Show video preview in post UI</td>
-      <td>Embed short video player in project post UI</td>
+      <td>Video Features</td>
+      <td>Video Playback</td>
+      <td>Build video player UI</td>
+      <td>Implement video player component</td>
       <td>React Native, Expo</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
-    <!-- Integration -->
     <tr>
-      <td>Video Sharing</td>
-      <td>Integration</td>
-      <td>Connect upload UI to backend</td>
-      <td>Integrate upload UI with backend API for video posts</td>
-      <td>React Native, Axios</td>
+      <td>Video Features</td>
+      <td>Video Playback</td>
+      <td>Add playback controls</td>
+      <td>Add play/pause/seek video controls</td>
+      <td>React Native, Expo</td>
       <td>2</td>
       <td>MVP</td>
     </tr>
     <!-- Testing & QA -->
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Testing & QA</td>
-      <td>Unit test video picker/upload UI</td>
-      <td>Write unit test for video picker, duration check, upload</td>
+      <td>Unit test recording UI</td>
+      <td>Write unit tests for video recording</td>
       <td>React Native, Expo</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Testing & QA</td>
-      <td>Backend endpoint test (upload/video retrieval)</td>
-      <td>Unit/integration tests for backend video API</td>
-      <td>Node.js, Express</td>
+      <td>Unit test upload/playback</td>
+      <td>Write unit tests for upload and playback</td>
+      <td>React Native, Expo</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
+      <td>Testing & QA</td>
+      <td>Backend endpoint tests</td>
+      <td>Unit/integration tests for video endpoints</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Video Features</td>
       <td>Testing & QA</td>
       <td>Manual regression testing</td>
-      <td>Manual test: upload, preview, and playback videos</td>
+      <td>Manual test: record, upload, playback flows</td>
       <td>QA</td>
-      <td>1</td>
+      <td>2</td>
       <td>MVP</td>
     </tr>
     <!-- Bug Fixing & Polish -->
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Bug Fixing & Polish</td>
       <td>Fix bugs from QA</td>
       <td>Fix bugs from unit/integration/manual tests</td>
@@ -245,35 +263,35 @@
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Bug Fixing & Polish</td>
-      <td>Polish video upload/playback UI</td>
-      <td>Polish upload and playback UI for mobile/web</td>
+      <td>Polish video UI/layout</td>
+      <td>Polish video UI for mobile/web</td>
       <td>React Native, Expo</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Bug Fixing & Polish</td>
       <td>Refactor video code</td>
-      <td>Refactor video sharing code, add comments</td>
+      <td>Refactor code for maintainability, add comments</td>
       <td>React Native, Node.js</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr>
-      <td>Video Sharing</td>
+      <td>Video Features</td>
       <td>Bug Fixing & Polish</td>
-      <td>Document video sharing feature</td>
-      <td>Document video sharing workflow for onboarding/devs</td>
+      <td>Document video features</td>
+      <td>Document video features for onboarding/devs</td>
       <td>PM/Docs</td>
       <td>1</td>
       <td>MVP</td>
     </tr>
     <tr style="background: #194065; color: white; font-weight: bold;">
       <td colspan="5" style="text-align: right; padding-right: 20px;">TOTAL HOURS:</td>
-      <td style="background: #0f2844; font-size: 1.1em;">25</td>
+      <td style="background: #0f2844; font-size: 1.1em;">33</td>
       <td></td>
     </tr>
   </table>
