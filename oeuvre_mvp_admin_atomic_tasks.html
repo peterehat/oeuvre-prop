@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Tools - MVP Atomic Task List</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 32px; background: #f7fafd; }
+    h1 { color: #234; }
+    table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 2px 10px rgba(38,76,123,0.08); }
+    th, td { border: 1px solid #e3e8ee; padding: 12px 10px; }
+    th { background: #e9f1fa; color: #194065; text-align: left; }
+    tr:nth-child(even) td { background: #f5f7fa; }
+    td { vertical-align: top; }
+    caption { caption-side: top; text-align: left; font-size: 1.3em; color: #194065; margin-bottom: 12px; }
+    
+    /* Navigation Menu Styles */
+    .nav-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .menu-toggle {
+      background: #194065;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(25,64,101,0.3);
+      transition: all 0.3s ease;
+    }
+    .menu-toggle:hover {
+      background: #0f2844;
+      transform: translateY(-1px);
+    }
+    .nav-menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      min-width: 280px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    .nav-menu.active {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-menu a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #194065;
+      border-bottom: 1px solid #e3e8ee;
+      transition: background 0.2s ease;
+    }
+    .nav-menu a:hover {
+      background: #f5f7fa;
+    }
+    .nav-menu a:last-child {
+      border-bottom: none;
+    }
+    .nav-menu a.current {
+      background: #e9f1fa;
+      font-weight: bold;
+    }
+    .nav-home {
+      background: #194065;
+      color: white !important;
+    }
+    .nav-home:hover {
+      background: #0f2844 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-container">
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-home">🏠 Home</a>
+      <a href="oeuvre_mvp_platform_atomic_tasks.html">🔧 Platform / Infrastructure</a>
+      <a href="oeuvre_mvp_onboarding_atomic_tasks.html">🚀 Onboarding</a>
+      <a href="oeuvre_mvp_profile_atomic_tasks.html">👤 Profile / Showcase</a>
+      <a href="oeuvre_mvp_video_atomic_tasks.html">🎥 Video Features</a>
+      <a href="oeuvre_mvp_community_atomic_tasks.html">👥 Community</a>
+      <a href="oeuvre_mvp_mentorship_atomic_tasks.html">🎓 Mentorship</a>
+      <a href="oeuvre_mvp_labs_atomic_tasks.html">🧪 Labs</a>
+      <a href="oeuvre_mvp_clu_ai_atomic_tasks.html">🤖 CLU AI</a>
+      <a href="oeuvre_mvp_admin_atomic_tasks.html" class="current">⚙️ Admin</a>
+    </nav>
+  </div>
+  
+  <h1>Admin Tools – MVP Atomic Task List</h1>
+  <table>
+    <caption>Each task ≤8 hours, grouped and clearly described</caption>
+    <tr>
+      <th>Feature Area</th>
+      <th>Sub-Feature</th>
+      <th>Task Name</th>
+      <th>Task Description</th>
+      <th>Tech/Stack</th>
+      <th>Est. Hours</th>
+      <th>Priority</th>
+    </tr>
+    <!-- Planning & UX -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Planning & UX</td>
+      <td>Define admin panel requirements</td>
+      <td>Workshop/document admin moderation, mentor assignment, featuring Labs</td>
+      <td>PM/UX</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Planning & UX</td>
+      <td>Wireframe admin panel UI</td>
+      <td>Wireframe admin panel for moderation, features, mentor management</td>
+      <td>UX/UI</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Admin Authentication -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Admin Authentication</td>
+      <td>Build admin login UI</td>
+      <td>React Native UI for admin login</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Admin Authentication</td>
+      <td>Backend: admin login endpoint</td>
+      <td>Node/Express endpoint for admin login, JWT auth</td>
+      <td>Node.js, Express, JWT</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Content Moderation -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Content Moderation</td>
+      <td>Build moderation UI</td>
+      <td>UI for viewing, flagging, deleting content (posts, Labs, users)</td>
+      <td>React Native, Expo</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Content Moderation</td>
+      <td>Backend: moderation endpoints</td>
+      <td>Endpoints for admin to delete/feature Labs, posts, assign mentors</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Content Moderation</td>
+      <td>Connect moderation UI to backend</td>
+      <td>Wire moderation UI to backend endpoints</td>
+      <td>React Native, Axios</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Feature Labs -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Feature Labs</td>
+      <td>UI for featuring Labs</td>
+      <td>Admin UI for marking Labs as featured/unfeatured</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Feature Labs</td>
+      <td>Backend: feature Labs endpoint</td>
+      <td>Node/Express endpoint to update Labs as featured/unfeatured</td>
+      <td>Node.js, Express</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Mentor Assignment -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Mentor Assignment</td>
+      <td>Admin UI for mentor assignment</td>
+      <td>UI for assigning/removing mentor roles</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Mentor Assignment</td>
+      <td>Backend: mentor assignment endpoint</td>
+      <td>Node/Express endpoint for admin mentor role assignment</td>
+      <td>Node.js, Express</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Testing & QA -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Testing & QA</td>
+      <td>Unit test admin panel UI</td>
+      <td>Write unit tests for admin panel pages/components</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Testing & QA</td>
+      <td>Backend endpoint tests (admin actions)</td>
+      <td>Unit/integration tests for admin endpoints (mod, mentor, feature)</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Testing & QA</td>
+      <td>Manual regression testing</td>
+      <td>Manual test: admin login, moderation, mentor, feature Labs</td>
+      <td>QA</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Bug Fixing & Polish -->
+    <tr>
+      <td>Admin Tools</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Fix bugs from QA</td>
+      <td>Fix bugs from unit/integration/manual tests</td>
+      <td>Full stack</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Polish admin panel UI/layout</td>
+      <td>Polish admin UI for clarity and usability</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Refactor admin code</td>
+      <td>Refactor admin code for maintainability, add comments</td>
+      <td>React Native, Node.js</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Admin Tools</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Document admin tools features</td>
+      <td>Document admin workflows for onboarding/devs</td>
+      <td>PM/Docs</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr style="background: #194065; color: white; font-weight: bold;">
+      <td colspan="5" style="text-align: right; padding-right: 20px;">TOTAL HOURS:</td>
+      <td style="background: #0f2844; font-size: 1.1em;">26</td>
+      <td></td>
+    </tr>
+  </table>
+  
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navContainer = document.querySelector('.nav-container');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (!navContainer.contains(event.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

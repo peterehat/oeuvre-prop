@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Community Features - MVP Atomic Task List</title>
+  <style>
+    body { font-family: 'Segoe UI', Arial, sans-serif; margin: 32px; background: #f7fafd; }
+    h1 { color: #234; }
+    table { border-collapse: collapse; width: 100%; background: #fff; box-shadow: 0 2px 10px rgba(38,76,123,0.08); }
+    th, td { border: 1px solid #e3e8ee; padding: 12px 10px; }
+    th { background: #e9f1fa; color: #194065; text-align: left; }
+    tr:nth-child(even) td { background: #f5f7fa; }
+    td { vertical-align: top; }
+    caption { caption-side: top; text-align: left; font-size: 1.3em; color: #194065; margin-bottom: 12px; }
+    
+    /* Navigation Menu Styles */
+    .nav-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .menu-toggle {
+      background: #194065;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(25,64,101,0.3);
+      transition: all 0.3s ease;
+    }
+    .menu-toggle:hover {
+      background: #0f2844;
+      transform: translateY(-1px);
+    }
+    .nav-menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      min-width: 280px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    .nav-menu.active {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-menu a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #194065;
+      border-bottom: 1px solid #e3e8ee;
+      transition: background 0.2s ease;
+    }
+    .nav-menu a:hover {
+      background: #f5f7fa;
+    }
+    .nav-menu a:last-child {
+      border-bottom: none;
+    }
+    .nav-menu a.current {
+      background: #e9f1fa;
+      font-weight: bold;
+    }
+    .nav-home {
+      background: #194065;
+      color: white !important;
+    }
+    .nav-home:hover {
+      background: #0f2844 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-container">
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-home">🏠 Home</a>
+      <a href="oeuvre_mvp_platform_atomic_tasks.html">🔧 Platform / Infrastructure</a>
+      <a href="oeuvre_mvp_onboarding_atomic_tasks.html">🚀 Onboarding</a>
+      <a href="oeuvre_mvp_profile_atomic_tasks.html">👤 Profile / Showcase</a>
+      <a href="oeuvre_mvp_video_atomic_tasks.html">🎥 Video Features</a>
+      <a href="oeuvre_mvp_community_atomic_tasks.html" class="current">👥 Community</a>
+      <a href="oeuvre_mvp_mentorship_atomic_tasks.html">🎓 Mentorship</a>
+      <a href="oeuvre_mvp_labs_atomic_tasks.html">🧪 Labs</a>
+      <a href="oeuvre_mvp_clu_ai_atomic_tasks.html">🤖 CLU AI</a>
+      <a href="oeuvre_mvp_admin_atomic_tasks.html">⚙️ Admin</a>
+    </nav>
+  </div>
+  
+  <h1>Community Features – MVP Atomic Task List</h1>
+  <table>
+    <caption>Each task ≤8 hours, grouped and clearly described</caption>
+    <tr>
+      <th>Feature Area</th>
+      <th>Sub-Feature</th>
+      <th>Task Name</th>
+      <th>Task Description</th>
+      <th>Tech/Stack</th>
+      <th>Est. Hours</th>
+      <th>Priority</th>
+    </tr>
+    <!-- Planning & UX -->
+    <tr>
+      <td>Community Features</td>
+      <td>Planning & UX</td>
+      <td>Define messaging/search/notification stories</td>
+      <td>Workshop user flows and document requirements for messaging, notifications, avatars, and search</td>
+      <td>PM/UX</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Planning & UX</td>
+      <td>Wireframe chat UI</td>
+      <td>Wireframe 1:1 chat/messaging UI (text only)</td>
+      <td>UX/UI</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Planning & UX</td>
+      <td>Wireframe notifications UI</td>
+      <td>Wireframe simple notifications badge and dropdown</td>
+      <td>UX/UI</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Planning & UX</td>
+      <td>Wireframe avatar upload/crop</td>
+      <td>Wireframe avatar picker and cropper UI</td>
+      <td>UX/UI</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Planning & UX</td>
+      <td>Wireframe search bar/results</td>
+      <td>Wireframe basic search for users/Labs/projects</td>
+      <td>UX/UI</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Messaging -->
+    <tr>
+      <td>Community Features</td>
+      <td>Messaging</td>
+      <td>Scaffold chat screen</td>
+      <td>Set up 1:1 chat screen in React Native</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Messaging</td>
+      <td>Build text input and send button</td>
+      <td>Implement message input and send in chat UI</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Messaging</td>
+      <td>Display message list in chat</td>
+      <td>Implement scrollable message list in UI</td>
+      <td>React Native, Expo</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Messaging</td>
+      <td>Show timestamps on messages</td>
+      <td>Add timestamp display to messages in chat UI</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Messaging</td>
+      <td>Show loading/error state for send</td>
+      <td>UI for message sending/loading/errors</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Backend: Messaging -->
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Messaging</td>
+      <td>Design messages DB schema</td>
+      <td>MySQL schema/table for messages</td>
+      <td>MySQL</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Messaging</td>
+      <td>API for sending messages</td>
+      <td>Express endpoint for send/receive messages</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Messaging</td>
+      <td>API for fetching chat history</td>
+      <td>Express endpoint for fetching chat message history</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Integration</td>
+      <td>Connect chat UI to backend</td>
+      <td>Connect chat UI to API endpoints (send/fetch messages)</td>
+      <td>React Native, Axios</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Notifications -->
+    <tr>
+      <td>Community Features</td>
+      <td>Notifications</td>
+      <td>Build notifications badge in UI</td>
+      <td>Show badge for new messages/alerts</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Notifications</td>
+      <td>Dropdown for notifications</td>
+      <td>Show dropdown of new notifications/messages</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Notifications</td>
+      <td>Design notifications DB schema</td>
+      <td>MySQL schema/table for notifications</td>
+      <td>MySQL</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Notifications</td>
+      <td>API for notifications</td>
+      <td>Express endpoint to push and fetch notifications</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Avatars -->
+    <tr>
+      <td>Community Features</td>
+      <td>Avatars</td>
+      <td>Build avatar upload/crop UI</td>
+      <td>Implement avatar picker and cropping UI</td>
+      <td>React Native, Expo</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Avatars</td>
+      <td>API/storage for avatar upload</td>
+      <td>Express endpoint and cloud storage for avatars</td>
+      <td>Node.js, Express, Digital Ocean</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Search -->
+    <tr>
+      <td>Community Features</td>
+      <td>Search</td>
+      <td>Build search bar UI</td>
+      <td>UI for searching users, Labs, projects</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Backend - Search</td>
+      <td>API for search</td>
+      <td>Backend endpoints for searching users/Labs/projects</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Testing & QA -->
+    <tr>
+      <td>Community Features</td>
+      <td>Testing & QA</td>
+      <td>Unit test chat UI</td>
+      <td>Write unit tests for chat message input, display</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Testing & QA</td>
+      <td>Unit test notifications and search UI</td>
+      <td>Write unit tests for notification badge, dropdown, and search</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Testing & QA</td>
+      <td>Backend endpoint tests (chat, notifications, search)</td>
+      <td>Unit/integration tests for chat, notifications, search endpoints</td>
+      <td>Node.js, Express</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Testing & QA</td>
+      <td>Manual regression testing</td>
+      <td>Manual test: all community features end-to-end</td>
+      <td>QA</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <!-- Bug Fixing & Polish -->
+    <tr>
+      <td>Community Features</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Fix bugs from QA</td>
+      <td>Fix bugs from unit/integration/manual tests</td>
+      <td>Full stack</td>
+      <td>2</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Polish chat/notifications/search UI</td>
+      <td>Polish UI for mobile/web responsiveness</td>
+      <td>React Native, Expo</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Refactor community code</td>
+      <td>Refactor community code for maintainability, add comments</td>
+      <td>React Native, Node.js</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr>
+      <td>Community Features</td>
+      <td>Bug Fixing & Polish</td>
+      <td>Document community features</td>
+      <td>Document all community features for team</td>
+      <td>PM/Docs</td>
+      <td>1</td>
+      <td>MVP</td>
+    </tr>
+    <tr style="background: #194065; color: white; font-weight: bold;">
+      <td colspan="5" style="text-align: right; padding-right: 20px;">TOTAL HOURS:</td>
+      <td style="background: #0f2844; font-size: 1.1em;">39</td>
+      <td></td>
+    </tr>
+  </table>
+  
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navContainer = document.querySelector('.nav-container');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (!navContainer.contains(event.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>

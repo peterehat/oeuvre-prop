@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Oeuvre MVP - Build Plan Overview</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', Arial, sans-serif; 
+      margin: 32px; 
+      background: #f7fafd; 
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { 
+      color: #234; 
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    .subtitle {
+      text-align: center;
+      color: #194065;
+      font-size: 1.2em;
+      margin-bottom: 40px;
+    }
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+    .section-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(38,76,123,0.08);
+      border: 1px solid #e3e8ee;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .section-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 20px rgba(38,76,123,0.12);
+    }
+    .section-title {
+      color: #194065;
+      font-size: 1.3em;
+      margin-bottom: 12px;
+      text-decoration: none;
+    }
+    .section-title:hover {
+      text-decoration: underline;
+    }
+    .section-description {
+      color: #666;
+      margin-bottom: 16px;
+    }
+    .section-link {
+      display: inline-block;
+      background: #194065;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .section-link:hover {
+      background: #0f2844;
+    }
+    .overview-table {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px;
+      box-shadow: 0 2px 10px rgba(38,76,123,0.08);
+      border: 1px solid #e3e8ee;
+      margin-bottom: 40px;
+    }
+    .overview-table h2 {
+      color: #194065;
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid #e3e8ee;
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: #e9f1fa;
+      color: #194065;
+      font-weight: 600;
+    }
+    tr:nth-child(even) td {
+      background: #f5f7fa;
+    }
+    .priority-mvp {
+      background: #e8f5e8;
+      color: #2d5a2d;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      font-weight: 500;
+    }
+    
+    /* Navigation Menu Styles */
+    .nav-container {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
+    .menu-toggle {
+      background: #194065;
+      color: white;
+      border: none;
+      padding: 12px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      box-shadow: 0 2px 10px rgba(25,64,101,0.3);
+      transition: all 0.3s ease;
+    }
+    .menu-toggle:hover {
+      background: #0f2844;
+      transform: translateY(-1px);
+    }
+    .nav-menu {
+      position: absolute;
+      top: 60px;
+      left: 0;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      min-width: 280px;
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+    .nav-menu.active {
+      max-height: 500px;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .nav-menu a {
+      display: block;
+      padding: 12px 20px;
+      text-decoration: none;
+      color: #194065;
+      border-bottom: 1px solid #e3e8ee;
+      transition: background 0.2s ease;
+    }
+    .nav-menu a:hover {
+      background: #f5f7fa;
+    }
+    .nav-menu a:last-child {
+      border-bottom: none;
+    }
+    .nav-menu a.current {
+      background: #e9f1fa;
+      font-weight: bold;
+    }
+    .nav-home {
+      background: #194065;
+      color: white !important;
+    }
+    .nav-home:hover {
+      background: #0f2844 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="nav-container">
+    <button class="menu-toggle" onclick="toggleMenu()">☰ Menu</button>
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-home current">🏠 Home</a>
+      <a href="oeuvre_mvp_platform_atomic_tasks.html">🔧 Platform / Infrastructure</a>
+      <a href="oeuvre_mvp_onboarding_atomic_tasks.html">🚀 Onboarding</a>
+      <a href="oeuvre_mvp_profile_atomic_tasks.html">👤 Profile / Showcase</a>
+      <a href="oeuvre_mvp_video_atomic_tasks.html">🎥 Video Features</a>
+      <a href="oeuvre_mvp_community_atomic_tasks.html">👥 Community</a>
+      <a href="oeuvre_mvp_mentorship_atomic_tasks.html">🎓 Mentorship</a>
+      <a href="oeuvre_mvp_labs_atomic_tasks.html">🧪 Labs</a>
+      <a href="oeuvre_mvp_clu_ai_atomic_tasks.html">🤖 CLU AI</a>
+      <a href="oeuvre_mvp_admin_atomic_tasks.html">⚙️ Admin</a>
+    </nav>
+  </div>
+  
+  <div class="container">
+    <h1>Oeuvre MVP - Build Plan Overview</h1>
+    <p class="subtitle">Comprehensive atomic task breakdown for mobile app development</p>
+    
+    <div class="overview-table">
+      <h2>Project Overview</h2>
+      <p>This build plan breaks down the Oeuvre mobile app MVP into atomic tasks (≤8 hours each) across 9 core feature areas. Each section contains detailed task descriptions, technology stack requirements, time estimates, and priority levels.</p>
+    </div>
+
+    <div class="section-grid">
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_platform_atomic_tasks.html" class="section-title">Platform / Infrastructure</a></h3>
+        <p class="section-description">Core platform setup, DevOps, CI/CD pipeline, hosting infrastructure, and deployment automation.</p>
+        <a href="oeuvre_mvp_platform_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_onboarding_atomic_tasks.html" class="section-title">Onboarding</a></h3>
+        <p class="section-description">User registration, authentication, profile setup, and initial user experience flow.</p>
+        <a href="oeuvre_mvp_onboarding_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_profile_atomic_tasks.html" class="section-title">Profile / Showcase</a></h3>
+        <p class="section-description">User profiles, project timelines, portfolio showcase, and shareable project links.</p>
+        <a href="oeuvre_mvp_profile_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_video_atomic_tasks.html" class="section-title">Video Features</a></h3>
+        <p class="section-description">Video upload, processing, playback, and integration with project showcases.</p>
+        <a href="oeuvre_mvp_video_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_community_atomic_tasks.html" class="section-title">Community</a></h3>
+        <p class="section-description">Social features, user interactions, following/followers, and community engagement tools.</p>
+        <a href="oeuvre_mvp_community_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_mentorship_atomic_tasks.html" class="section-title">Mentorship</a></h3>
+        <p class="section-description">Mentor-student connections, mentorship programs, and guidance features.</p>
+        <a href="oeuvre_mvp_mentorship_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_labs_atomic_tasks.html" class="section-title">Labs</a></h3>
+        <p class="section-description">Experimental features, creative tools, and advanced functionality for power users.</p>
+        <a href="oeuvre_mvp_labs_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_clu_ai_atomic_tasks.html" class="section-title">CLU AI</a></h3>
+        <p class="section-description">AI-powered features, intelligent recommendations, and automated content assistance.</p>
+        <a href="oeuvre_mvp_clu_ai_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+
+      <div class="section-card">
+        <h3><a href="oeuvre_mvp_admin_atomic_tasks.html" class="section-title">Admin</a></h3>
+        <p class="section-description">Administrative dashboard, user management, content moderation, and system monitoring.</p>
+        <a href="oeuvre_mvp_admin_atomic_tasks.html" class="section-link">View Tasks →</a>
+      </div>
+    </div>
+
+    <div class="overview-table">
+      <h2>Quick Reference</h2>
+      <table>
+        <tr>
+          <th>Section</th>
+          <th>Focus Area</th>
+          <th>Key Technologies</th>
+          <th>Est. Hours</th>
+          <th>Priority</th>
+        </tr>
+        <tr>
+          <td>Platform / Infrastructure</td>
+          <td>DevOps & Hosting</td>
+          <td>Digital Ocean, GitHub Actions, Node.js</td>
+          <td><strong>19</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Onboarding</td>
+          <td>User Authentication</td>
+          <td>React Native, Express, JWT</td>
+          <td><strong>22</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Profile / Showcase</td>
+          <td>User Profiles</td>
+          <td>React Native, MySQL, Node.js</td>
+          <td><strong>36</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Video Features</td>
+          <td>Media Management</td>
+          <td>FFmpeg, Cloud Storage, Streaming</td>
+          <td><strong>25</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Community</td>
+          <td>Social Features</td>
+          <td>React Native, WebSockets, MySQL</td>
+          <td><strong>39</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Mentorship</td>
+          <td>Connections</td>
+          <td>Matching Algorithms, Messaging</td>
+          <td><strong>24</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Labs</td>
+          <td>Experimental</td>
+          <td>Advanced Tools, Creative Features</td>
+          <td><strong>50</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>CLU AI</td>
+          <td>AI Features</td>
+          <td>ML Models, NLP, Recommendations</td>
+          <td><strong>53</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr>
+          <td>Admin</td>
+          <td>Management</td>
+          <td>Dashboard, Analytics, Moderation</td>
+          <td><strong>26</strong></td>
+          <td><span class="priority-mvp">MVP</span></td>
+        </tr>
+        <tr style="background: #194065; color: white; font-weight: bold;">
+          <td colspan="3" style="text-align: right; padding-right: 20px;">TOTAL PROJECT HOURS:</td>
+          <td style="background: #0f2844; font-size: 1.2em;">294</td>
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <script>
+    function toggleMenu() {
+      const navMenu = document.getElementById('navMenu');
+      navMenu.classList.toggle('active');
+    }
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      const navContainer = document.querySelector('.nav-container');
+      const navMenu = document.getElementById('navMenu');
+      
+      if (!navContainer.contains(event.target) && navMenu.classList.contains('active')) {
+        navMenu.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html> 
